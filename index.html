@@ -18,7 +18,6 @@
             letter-spacing: 2px;
             font-family: "Courier New", monospace;
             text-transform: uppercase;
-            margin-top: 200px;
         }
         
         h1 {
@@ -27,7 +26,7 @@
             text-transform: uppercase;
             color: #00ff00;
             text-align: center;
-            margin-top: 100px;
+            padding-top: 150px;
         }
         
         p {
@@ -40,7 +39,7 @@
         .button-container {
             display: flex;
             justify-content: center;
-            margin-top: 5000px;
+            margin-top: 2000px;
             margin-bottom: 50px;
         }
         
@@ -61,83 +60,20 @@
             background-color: #00ff00;
             color: #000000;
         }
-        
-        .answer-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .answer-input {
-            padding: 10px;
-            font-size: 20px;
-            border: 1px solid #00ff00;
-            background-color: #000000;
-            color: #00ff00;
-            font-family: "Courier New", monospace;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        
-        .answer-button {
-            background-color: #000000;
-            color: #00ff00;
-            padding: 12px 24px;
-            font-size: 20px;
-            border: 1px solid #00ff00;
-            cursor: pointer;
-            font-family: "Courier New", monospace;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        
-        .answer-button:hover {
-            background-color: #00ff00;
-            color: #000000;
-        }
     </style>
-    <script>
-        function generateRandomQuestion() {
-            var num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
-            var num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
-            var operator = Math.random() < 0.5 ? '+' : '-'; // Randomly choose between addition or subtraction
-            
-            var questionElement = document.getElementById("question");
-            questionElement.textContent = "Solve the math problem: " + num1 + " " + operator + " " + num2;
-            questionElement.setAttribute("data-answer", operator === '+' ? num1 + num2 : num1 - num2);
-        }
-        
-        function checkAnswer() {
-            var answer = document.getElementById("answer").value;
-            var questionElement = document.getElementById("question");
-            var correctAnswer = questionElement.getAttribute("data-answer");
-            
-            if (parseInt(answer) === parseInt(correctAnswer)) {
-                document.getElementById("button-container").scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="banner">
         <h2>MYSELF</h2>
     </div>
-    <h1>You are in step 2</h1>
-    <p id="question">Click the button to generate a random math question.</p>
-    <div class="answer-container">
-        <input type="text" id="answer" class="answer-input" placeholder="Your Answer">
-        <button onclick="checkAnswer()" class="answer-button" disabled>Submit</button>
+    <h1>YOU GOT THE PAPER AND CAME HERE</h1>
+    <p>
+        I think you are finding me, that's not a big deal. The paper was written in Spanish, and you still got the time to translate and find me. You are the intelligent one, so do you want me?
+    </p>
+    <div class="button-container">
+        <a href="https://myself-626.github.io/PAGE2/">
+            <button class="button">Find Me Here ðŸ’€</button>
+        </a>
     </div>
-    <div id="button-container" class="button-container">
-        <button class="button">Find Me Here ðŸ’€</button>
-    </div>
-    
-    <script>
-        generateRandomQuestion(); // Generate initial question
-        document.getElementById("answer").addEventListener("input", function() {
-            var submitButton = document.querySelector(".answer-button");
-            submitButton.disabled = this.value.length === 0;
-        });
-    </script>
 </body>
 </html>
